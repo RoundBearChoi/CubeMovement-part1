@@ -21,24 +21,32 @@ namespace RB
 
         private void Update()
         {
-            if (Gamepad.all[0].leftStick.left.isPressed)
+            if (Gamepad.all.Count > 0)
             {
-                cube.transform.position += Vector3.left * Time.deltaTime * 5f;
-            }
+                if (Gamepad.all[0].leftStick.left.isPressed)
+                {
+                    cube.transform.position += Vector3.left * Time.deltaTime * 5f;
+                }
 
-            if (Gamepad.all[0].leftStick.right.isPressed)
-            {
-                cube.transform.position += Vector3.right * Time.deltaTime * 5f;
-            }
+                if (Gamepad.all[0].leftStick.right.isPressed)
+                {
+                    cube.transform.position += Vector3.right * Time.deltaTime * 5f;
+                }
 
-            if (Gamepad.all[0].leftStick.up.isPressed)
-            {
-                cube.transform.position += Vector3.up * Time.deltaTime * 5f;
-            }
+                if (Gamepad.all[0].leftStick.up.isPressed)
+                {
+                    cube.transform.position += Vector3.up * Time.deltaTime * 5f;
+                }
 
-            if (Gamepad.all[0].leftStick.down.isPressed)
-            {
-                cube.transform.position += Vector3.down * Time.deltaTime * 5f;
+                if (Gamepad.all[0].leftStick.down.isPressed)
+                {
+                    cube.transform.position += Vector3.down * Time.deltaTime * 5f;
+                }
+
+                if (Gamepad.all[0].buttonSouth.wasPressedThisFrame)
+                {
+                    Debug.Log("X pressed!");
+                }
             }
         }
     }
